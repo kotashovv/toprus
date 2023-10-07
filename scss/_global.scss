@@ -2,7 +2,9 @@
 
 $rob: 'Roboto', sans-serif;
 $backblue: #F6F8FF;
-
+body {
+    font-family: $rob;
+}
 .container {
     max-width: 1330px;
     box-sizing: border-box;
@@ -13,18 +15,34 @@ $backblue: #F6F8FF;
 .main-btn {
  font-family: $rob;           
  text-decoration: none;
+ box-sizing: border-box;
  display: block;
  width: fit-content;
+ cursor: pointer;
  padding: 12px 32px;
- color: #000;
  border: 2px solid #507BE9;
+ background-color: #507BE9;
+ color: #fff;
  font-weight: 400;
  border-radius: 40px;
  font-size: 16px;
  text-align: center;
+ transition: .35s ease;
+ &.trans-btn {
+    color: #000;
+    background-color: #fff;
+    &:hover {
+        background-color: #507BE9;
+        color: #fff;
+    }
+ }
  @media(max-width:760px) {
     font-size: 14px;
     padding: 14px 30px;
+ }
+ &:hover {
+    background-color: #fff;
+    color: #507BE9;
  }
 }
 .burger-btn {
@@ -58,5 +76,40 @@ $backblue: #F6F8FF;
         width: 20px;
         height: 2px;
         background-color: #000;
+    }
+}
+
+.stars {
+    overflow: hidden;
+    display: block;
+    width: 100px;
+    height: 17px;
+    background-image: url(assets/imgs/star-empty.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    margin-right: 10px;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        background-image: url(assets/imgs/star-fill.svg);
+    }
+    &.stars-4 {
+       &::before {
+        transform: translateX(-21%);
+       }
+    }
+    &.stars-5 {
+        &::before {
+            transform: translateX(0);
+        }
     }
 }
