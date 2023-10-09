@@ -95,4 +95,39 @@ document.addEventListener('DOMContentLoaded', ()=>{
             }
         }
     })
+
+    const newSlider = new Swiper('.news__slider-swiper', {
+        spaceBetween: 25,
+        breakpoints: {
+            0: {
+            slidesPerView: 1,
+            },
+            560: {
+            slidesPerView: 1.5,
+            },
+            768: {
+            slidesPerView: 2,
+            },
+            920: {
+            slidesPerView: 3,
+            },
+        }
+    })
+    const papersSlider = new Swiper('.papers__slider-swiper', {
+        spaceBetween: 25,
+        breakpoints: {
+            0: {
+            slidesPerView: 1,
+            },
+            560: {
+            slidesPerView: 1.5,
+            },
+            768: {
+            slidesPerView: 2,
+            },
+            920: {
+            slidesPerView: 3,
+            },
+        }
+    })
 })
