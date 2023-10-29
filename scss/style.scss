@@ -1,3 +1,18 @@
+/*
+Theme Name: Дочерняя тема TopRusCredit
+Template: TopCredit
+
+Не обязательные параметры:
+Theme URI: http://example.com/
+Description: Дочерняя тема для темы twentyfifteen
+Author: Аноним
+Author URI: http://example.com/about/
+Version: 1.0
+*/
+
+
+@import url("../topcredit/style.css");
+
 @import 'normalize';
 
 @import 'global';
@@ -25,3 +40,50 @@
 @import 'components/populars';
 
 @import 'components/footer';
+
+@import 'components/location-popup';
+
+@import 'components/search-business';
+
+.nav-bullets {
+    position: relative;
+    margin-top: 30px;
+    display: none;
+    @media(max-width:768px) {
+        display: block;
+    }
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        border: 2px solid #507be9;
+        background-color: transparent;
+        transition: .35s ease;
+       
+    }
+    .swiper-pagination-bullet-active {
+        background-color: #507be9;
+    }
+}
+
+.loading-text {
+    font-size: 0;
+    width: 50px;
+    height: 20px;
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url(assets/imgs/load.gif);
+        background-size: 50px 20px;
+        left: 0;
+        top: 0;
+        transition: .35s ease;
+    }
+    &.active {
+        &::before {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}
+
+@import 'components/zaims';

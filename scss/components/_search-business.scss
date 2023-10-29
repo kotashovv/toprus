@@ -1,0 +1,73 @@
+
+.header {
+
+		// .header__search-form
+
+		&__search-form {
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            display: none;
+            position: relative;
+            z-index: 1000;
+            &.active {
+                display: flex;
+            }
+            form {
+                box-sizing: border-box;
+                width: 100%;
+                label {
+                    width: 100%;
+                    display: flex;
+                    align-items: stretch;
+                    input {
+                        width: 100%;
+                        box-sizing: border-box;
+                        padding: 13px 15px;
+                        font-size: 20px;
+                        font-weight: 400;
+                        line-height: 1.4;
+                        border: 1px solid #507BE9;
+                    }
+                    button {
+                        width: 85px;
+                        box-sizing: border-box;
+                        padding: 13px 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #507BE9;
+                        border: 1px solid #507BE9;
+                        img {
+                            display: block;
+                            max-width: 100%;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+            }
+		}
+}
+
+@media(max-width:560px) {
+    .header {
+        &__search-form {
+            form {
+                label {
+                    input {
+                        font-size: 16px;
+                        padding: 10px 15px;
+                    }
+                    button {
+                        width: 50px;
+                        padding: 0;
+                        height: auto;
+                        img {
+                            width: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <?php wp_head(); ?>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -89,20 +91,6 @@
               </button>
             </div>
           </div>
-          <div class="row header__search-form">
-            <form
-              role="search"
-              method="get"
-              class="search-form"
-              action="<?php echo esc_url(home_url('/')); ?>"
-            >
-              <label>
-                <input placeholder="Поиск по сайту" type="search">
-                <button type="submit" class="search-btn-action"><img src="assets/imgs/search-white.svg" alt=""></button>
-              </label>
-            </form>
-            <div id="search-results"></div>
-          </div>
         </div>
         <div class="header__mobile-menu">
           <button class="close-menu"></button>
@@ -150,46 +138,11 @@
             </ul>
           </nav>
         </div>
-        <div class="header__location-pop">
-          <div class="header__location-body">
-            <button class="close-btn close-location"></button>
-            <div class="location__header">
-              <span class="current-city"> Ваш город </span>
-            </div>
-            <div class="location__search">
-              <input
-                id="cityInput"
-                type="text"
-                placeholder="Введите название города"
-              />
-              <ul id="suggestions"></ul>
-            </div>
-
-            <div class="location__list">
-              <ul class="location__list-item">
-                <li>Волгоград</li>
-                <li>Воронеж</li>
-                <li>Екатеринбург</li>
-                <li>Казань</li>
-                <li>Краснодар</li>
-                <li>Красноярск</li>
-                <li>Москва</li>
-                <li>Нижний Новгород</li>
-                <li>Омск</li>
-                <li>Новосибирск</li>
-                <li>Пермь</li>
-                <li>Ростов-на-Дону</li>
-                <li>Санкт-Петербург</li>
-                <li>Челябинск</li>
-                <li>Самара</li>
-                <li>Уфа</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </header>
       <main class="main">
-        <div class="black-modal"></div>
+        <div class="black-modal">
+          
+        </div>
         <section class="welcome">
           <div class="container">
             <div class="welcome__row big-items">
@@ -761,10 +714,6 @@
                     <img src="assets/imgs/part6.png" alt="" />
                   </a>
                 </div>
-
-                <div class="swiper-pagination nav-bullets partners__pagination">
-
-                </div>
               </div>
             </div>
           </div>
@@ -791,10 +740,6 @@
           </div>
           <div class="feedback__slider">
             <div class="container">
-              <div class="feedback__navigation">
-                <button class="feedback__prev"><img src="assets/imgs/arrow-slider.png" alt=""></button>
-                <button class="feedback__next"><img src="assets/imgs/arrow-slider.png" alt=""></button>
-              </div>
               <div class="feedback__slider-swiper swiper">
                 <div class="feedback__slider-wrapper swiper-wrapper">
                   <article class="feedback__slider-slide swiper-slide">
@@ -1204,74 +1149,112 @@
               <a href="#">
                 <img src="assets/imgs/Image.png" alt="" />
                 <div class="text">
-                  <h2>Независимый рейтинг кредитов и микрозаймов России</h2>
+                  <h2>
+                    Независимый рейтинг кредитов и микрозаймов России
+                  </h2>
                 </div>
               </a>
               <div class="links">
-                <a href="#">Пользовательское соглашение</a>
-                <a href="#">Использование cookies</a>
-                <a href="#">Политика конфиденциальности</a>
+                 <a href="#">Пользовательское соглашение</a>
+                 <a href="#">Использование cookies</a>
+                 <a href="#">Политика конфиденциальности</a>
               </div>
             </div>
             <div class="footer__col">
-              <p>Меню</p>
+              <p>
+                Меню
+              </p>
               <ul>
                 <li>
-                  <a href="#"> О сервисе </a>
+                  <a href="#">
+                    О сервисе
+                  </a>
                 </li>
                 <li>
-                  <a href="#"> Перечень услуг </a>
+                  <a href="#">
+                    Перечень услуг
+                  </a>
                 </li>
                 <li>
-                  <a href="#"> Отзывы о нас </a>
+                  <a href="#">
+                    Отзывы о нас
+                  </a>
                 </li>
                 <li>
-                  <a href="#"> Вакансии </a>
+                  <a href="#">
+                    Вакансии
+                  </a>
                 </li>
                 <li>
-                  <a href="#"> Реклама </a>
+                  <a href="#">
+                    Реклама
+                  </a>
                 </li>
                 <li>
-                  <a href="#"> Наши эксперты </a>
+                  <a href="#">
+                    Наши эксперты
+                  </a>
                 </li>
                 <li>
-                  <a href="#"> Карта сайта </a>
+                  <a href="#">
+                    Карта сайта
+                  </a>
                 </li>
               </ul>
             </div>
             <div class="footer__col">
-              <p>Популярное</p>
+              <p>
+                Популярное
+              </p>
               <ul>
                 <li>
-                  <a href="#"> Новости </a>
+                  <a href="#">
+                    Новости
+                  </a>
                 </li>
                 <li>
-                  <a href="#"> Займы онлайн </a>
+                  <a href="#">
+                    Займы онлайн
+                  </a>
                 </li>
                 <li>
-                  <a href="#"> Займы на карту </a>
+                  <a href="#">
+                    Займы на карту
+                  </a>
                 </li>
                 <li>
-                  <a href="#"> Курсы валют </a>
+                  <a href="#">
+                    Курсы валют
+                  </a>
                 </li>
               </ul>
             </div>
             <div class="footer__col">
-              <p>Cоциальные сети</p>
+              <p>
+                Cоциальные сети
+              </p>
               <ul>
                 <li>
-                  <a class="link-ico vk-ico" href="#"> ВКонтакте </a>
+                  <a class="link-ico vk-ico" href="#">
+                    ВКонтакте
+                  </a>
                 </li>
                 <li>
-                  <a class="link-ico tg-ico" href="#"> Telegram </a>
+                  <a class="link-ico tg-ico" href="#">
+                    Telegram
+                  </a>
                 </li>
               </ul>
             </div>
             <div class="footer__col">
-              <p>Контакты</p>
+              <p>
+                Контакты
+              </p>
               <ul>
                 <li>
-                  <a class="link-ico phone-ico" href="#"> 8-800-123-24-55 </a>
+                  <a class="link-ico phone-ico" href="#">
+                    8-800-123-24-55 
+                  </a>
                 </li>
                 <li>
                   <a class="link-ico email-ico" href="#">
@@ -1279,7 +1262,9 @@
                   </a>
                 </li>
                 <li>
-                  <span class="link-ico time-ico"> Пн-Вс: Круглосуточно </span>
+                  <span class="link-ico time-ico">
+                    Пн-Вс: Круглосуточно
+                  </span>
                 </li>
               </ul>
             </div>
@@ -1289,8 +1274,10 @@
               <a href="#">Пользовательское соглашение</a>
               <a href="#">Использование cookies</a>
               <a href="#">Политика конфиденциальности</a>
-            </div>
-            <span> @2023 ТопРусКредит </span>
+           </div>
+            <span>
+              @2023 ТопРусКредит
+            </span>
           </div>
         </div>
       </footer>
@@ -1299,3 +1286,5 @@
   <script src="assets/libs/cdn.jsdelivr.net_npm_swiper@10.3.1_swiper-bundle.min.js"></script>
   <script src="js/app.js"></script>
 </html>
+
+<?php wp_footer(); ?>

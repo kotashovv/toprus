@@ -111,6 +111,20 @@
                 &:last-child {
                     margin-right: 0;
                 }
+                transition: .35s ease;
+                &:hover {
+                    background-color: #507BE9;
+                    .text {
+                        p, h2, h1 {
+                            color: #fff;
+                        }
+                        span {
+                            background-color: #fff;
+                            color: #507BE9;
+                        }
+                    }
+                }
+               
             }
         }
     }
