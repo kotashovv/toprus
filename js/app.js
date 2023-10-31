@@ -98,6 +98,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     })
+    const aboutSlidersmall = new Swiper(".about__slider-swiper-small", {
+        spaceBetween: 25,
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            560: {
+                slidesPerView: 1.5,
+            },
+            768: {
+                slidesPerView: 2.5,
+            },
+            1200: {
+                slidesPerView: 3,
+            }
+        }
+    })
 
     const partnersSlider = new Swiper('.partners__slider-swiper', {
         spaceBetween: 25,
@@ -134,6 +151,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     })
+    const feedbackSliderSmall = new Swiper('.feedback__slider-swiper-small', {
+        spaceBetween: 25,
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            560: {
+                slidesPerView: 1,
+            },
+            820: {
+                slidesPerView: 2,
+            },
+            1200: {
+                slidesPerView: 2,
+            }
+        }
+    })
 
     const newSlider = new Swiper('.news__slider-swiper', {
         spaceBetween: 25,
@@ -166,6 +200,23 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             920: {
                 slidesPerView: 3,
+            },
+        }
+    })
+    const papersSliderSmall = new Swiper('.papers__slider-swiper-small', {
+        spaceBetween: 25,
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            560: {
+                slidesPerView: 1.5,
+            },
+            768: {
+                slidesPerView: 1.5,
+            },
+            920: {
+                slidesPerView: 2,
             },
         }
     })
@@ -308,5 +359,59 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+    }
+
+    const moreBtn = document.querySelector('.paragraph-more');
+
+    if (moreBtn) {
+
+        const hideText = document.querySelector('.paragraph__hide-text')
+        moreBtn.addEventListener('click', (e)=>{
+            if (e.target.classList.contains('active')) {
+                hideText.classList.remove('active');
+                e.target.classList.remove('active');
+                e.target.innerHTML = 'Показать ещё';
+            } else {
+                hideText.classList.add('active');
+                e.target.classList.add('active');
+                e.target.innerHTML = 'Скрыть';
+            }
+        })
+    }
+
+    const faqBtns = document.querySelectorAll('.faq__btn');
+
+    if (faqBtns.length != 0) {
+        
+        faqBtns.forEach(function(item){
+            item.addEventListener('click', (e)=>{
+                if (e.target.classList.contains('active')) {
+                    ClosesFaq()
+                } else {
+                    OpenFaq(item);
+                }
+            })
+        })
+
+        const faqtext = document.querySelectorAll('.faq__text');
+
+        function OpenFaq(item) {
+            faqBtns.forEach((i)=>{
+                i.classList.remove('active');
+            })
+            faqtext.forEach((i)=>{
+                i.classList.remove('active');
+            })
+            item.classList.add('active');
+            item.nextElementSibling.classList.add('active');
+        }
+        function ClosesFaq(item) {
+            faqBtns.forEach((i)=>{
+                i.classList.remove('active');
+            })
+            faqtext.forEach((i)=>{
+                i.classList.remove('active');
+            })
+        }
     }
 })
