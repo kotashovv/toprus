@@ -700,3 +700,209 @@ margin-bottom: 20px;
         padding: 40px 0;
     }
 }
+
+
+.quest {
+    padding: 80px 0 40px;
+    box-sizing: border-box;
+    >a {
+        margin-top: 40px;
+        max-width: none;
+        text-align: center;
+        width: 100%;
+    }
+    // .quest__item
+
+    &__item {
+        box-sizing: border-box;
+        padding: 40px 30px 40px 45px;
+        
+        display: flex;
+        align-items: center;
+        border-radius: 24px;
+border: 1px solid var(--Border, #EFEFEF);
+background: #F6F8FF;
+box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.15);
+        .text {
+            margin-right: auto;
+            p {
+                font-family: $rob;
+                font-size: 25px;
+                font-weight: 500;
+                line-height: 1.3;
+                margin: 0;
+                margin-bottom: 5px;
+            }
+            a {
+                margin-top: 20px;
+            }
+        }
+        .img {
+            max-width: 150px;
+            margin-left: 15px;
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .chart {
+        width: 100%;
+        margin-bottom: 30px;
+        position: relative;
+        width: 100%;
+        border-radius: 20px;
+border: 1px solid #F5F5F5;
+background: #FFF;
+box-shadow: 2px 4px 16px 0px rgba(0, 0, 0, 0.07);
+padding: 30px 20px;
+box-sizing: border-box;
+        &::before {
+            content: '';
+            position: absolute;
+            right: 10px;
+            top: 0;
+            width: 65px;
+            height: 75px;
+            background-image: url(assets/imgs/flag-chart.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+           
+        }
+        .chart__title {
+            padding-right: 50px;
+            h2 {
+                color: #000;
+                font-family: $rob;
+                font-size: 24px;
+                margin: 0;
+                display: block;
+                line-height: 1.2;
+                text-transform: capitalize;
+            }
+        }
+        .chart__list {
+            counter-reset: my-counter; // Задаем начальное значение счетчика
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    margin: 0;
+                    margin-bottom: 10px;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid #E6E6E6;
+                    &::before {
+                        content: counter(my-counter); // Используем счетчик для добавления числа
+                        counter-increment: my-counter; // Увеличиваем счетчик
+                        display: inline-block;
+                        margin-right: 10px; // Расстояние между числом и текстом
+                        font-size: 19px;
+                        line-height: 1;
+                        margin-bottom: -2px;
+                    }
+                    a {
+                        color: #697686;
+                        font-size: 19px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1;
+                        text-decoration: underline;
+                        padding: 15px 0;
+                        padding-left: 30px;
+                        position: relative;
+                        &.top-chart {
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                top: calc(50% - 9px);
+                                width: 18px;
+                                height: 18px;
+                                background-image: url(/assets/imgs/rat-up.svg);
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                            }
+                        }
+                        &.bot-chart {
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                top: calc(50% - 9px);
+                                width: 18px;
+                                height: 18px;
+                                background-image: url(/assets/imgs/rat-dwon.svg);
+                                background-size: contain;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sidebar-filter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 20px;
+border: 1px solid #F5F5F5;
+background: #FFF;
+box-shadow: 2px 4px 16px 0px rgba(0, 0, 0, 0.07);
+box-sizing: border-box;
+padding: 25px;
+}
+.filter-items {
+    display: flex;
+    margin-bottom: 25px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    p {
+        font-size: 20px;
+        margin: 0;
+        display: block;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    flex-direction: column;
+    button {
+        background-color: transparent;
+        text-align: left;
+        padding: 0;
+        box-sizing: border-box;
+        border: none;
+        margin-bottom: 5px;
+        padding: 5px 0;
+        color: #697686;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 1.3;
+width: 100%;
+cursor: pointer;
+&:hover {
+    text-decoration: underline;
+}
+    }
+
+
+    svg {
+        display: block;
+        
+    }
+}
+.btn-filter {
+}
