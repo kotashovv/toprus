@@ -108,7 +108,12 @@
         .item {
             display: flex;
             width: 100%;
+            color: #000;
+            text-decoration: none;
             box-sizing: border-box;
+            &:Hover {
+                color: #395EBB;
+            }
             .col {
                 width: 25%;
                 box-sizing: border-box;
@@ -122,6 +127,37 @@
     // .tablelist__pagination
 
     &__pagination {
+        display: flex;
+        box-sizing: border-box;
+        margin: 30px 0;
+        width: 100%;
+        justify-content: center;
+        button {
+            width: 35px;
+            height: 35px;
+            box-sizing: border-box;
+            padding: 9px;
+            text-align: center;
+            background-color: transparent;
+            border-radius: 5px;
+            border: 1px solid #EBEBEB;
+            cursor: pointer;
+            transition: .35s ease;
+            margin: 0 3.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+                border: 1px solid #395EBB;
+                background-color: #395EBB;
+                color: #fff;
+            }
+            &.active {
+                border: 1px solid #395EBB;
+                color: #fff;
+                background-color: #395EBB;
+            }
+        }
     }
 
     // .tablelist__prev
@@ -132,6 +168,8 @@
     // .tablelist__nums
 
     &__nums {
+        display: flex;
+        align-items: center;
     }
 }
 .col {
