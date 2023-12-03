@@ -166,6 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
             1200: {
                 slidesPerView: 2,
             }
+        },
+        navigation: {
+            prevEl: '.feedback__prev',
+            nextEl: '.feedback__next'
         }
     })
 
@@ -334,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
             blackModal.classList.add('_active')
             const searchForm = document.querySelector('.header__search-form');
             searchForm.classList.add('active');
-            document.addEventListener('click', (e)=>{
+            document.addEventListener('click', (e) => {
                 if (!e.target.closest('.search-btn') && !e.target.closest('.header__search-form')) {
                     closeSearchForm();
                 }
@@ -366,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (moreBtn) {
 
         const hideText = document.querySelector('.paragraph__hide-text')
-        moreBtn.addEventListener('click', (e)=>{
+        moreBtn.addEventListener('click', (e) => {
             if (e.target.classList.contains('active')) {
                 hideText.classList.remove('active');
                 e.target.classList.remove('active');
@@ -382,9 +386,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const faqBtns = document.querySelectorAll('.faq__btn');
 
     if (faqBtns.length != 0) {
-        
-        faqBtns.forEach(function(item){
-            item.addEventListener('click', (e)=>{
+
+        faqBtns.forEach(function (item) {
+            item.addEventListener('click', (e) => {
                 if (e.target.classList.contains('active')) {
                     ClosesFaq()
                 } else {
@@ -396,22 +400,126 @@ document.addEventListener('DOMContentLoaded', () => {
         const faqtext = document.querySelectorAll('.faq__text');
 
         function OpenFaq(item) {
-            faqBtns.forEach((i)=>{
+            faqBtns.forEach((i) => {
                 i.classList.remove('active');
             })
-            faqtext.forEach((i)=>{
+            faqtext.forEach((i) => {
                 i.classList.remove('active');
             })
             item.classList.add('active');
             item.nextElementSibling.classList.add('active');
         }
+
         function ClosesFaq(item) {
-            faqBtns.forEach((i)=>{
+            faqBtns.forEach((i) => {
                 i.classList.remove('active');
             })
-            faqtext.forEach((i)=>{
+            faqtext.forEach((i) => {
                 i.classList.remove('active');
             })
         }
+    }
+
+
+    const mobileSort = document.querySelector('.sort-rating');
+
+    if (mobileSort) {
+        mobileSort.addEventListener('click', () => {
+            const mobileSortList = mobileSort.nextElementSibling;
+            if (mobileSortList.classList.contains('active')) {
+                mobileSortList.classList.remove('active')
+            } else {
+                mobileSortList.classList.add('active')
+            }
+
+        })
+    }
+
+    const filterCategoryBtn = document.querySelector('button.filter-category');
+    const categoryMobilePopup = document.querySelector('.popup__category');
+    const categoryBtnClose = document.querySelector('.close-mobile-category');
+
+
+    if (filterCategoryBtn) {
+        filterCategoryBtn.addEventListener('click', () => {
+            openCategoryPopup();
+        })
+    }
+
+    if (categoryBtnClose) {
+        categoryBtnClose.addEventListener('click', () => {
+            closeCategoryPopup();
+        })
+    }
+
+    function openCategoryPopup() {
+        categoryMobilePopup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCategoryPopup() {
+        categoryMobilePopup.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    var rangeSlider = document.querySelector('.slider-sum');
+    var sumInput = document.getElementById('sum-form');
+
+    noUiSlider.create(rangeSlider, {
+        start: [30000],
+        range: {
+            'min': [1500],
+            'max': [150000]
+        }
+    });
+    rangeSlider.noUiSlider.on('update', function (values, handle) {
+        // Округляем значение до целого числа
+        var roundedValue = Math.round(values[handle]);
+        sumInput.value = roundedValue;
+    });
+    
+    // Если вы хотите, чтобы поле ввода обновлялось при вводе значения
+    sumInput.addEventListener('change', function () {
+        // Устанавливаем значение слайдера, округленное до целого числа
+        rangeSlider.noUiSlider.set([Math.round(this.value)]);
+    });
+
+    var dateSlider = document.querySelector('.slider-date');
+    var dateInput = document.getElementById('date-input');
+
+    noUiSlider.create(dateSlider, {
+        start: [30],
+        range: {
+            'min': [5],
+            'max': [365]
+        }
+    });
+    dateSlider.noUiSlider.on('update', function (values, handle) {
+        // Округляем значение до целого числа
+        var roundedValue = Math.round(values[handle]);
+        dateInput.value = roundedValue;
+    });
+    
+    // Если вы хотите, чтобы поле ввода обновлялось при вводе значения
+    dateInput.addEventListener('change', function () {
+        // Устанавливаем значение слайдера, округленное до целого числа
+        dateSlider.noUiSlider.set([Math.round(this.value)]);
+    });
+
+    const btnShowHideTextPapers = document.querySelector('.newspaper .show-hide-text');
+
+    if (btnShowHideTextPapers) {
+        btnShowHideTextPapers.addEventListener('click', ()=>{
+            const hideText = document.querySelector('.newspaper .hide-text');
+
+            if (hideText.classList.contains('active')) {
+                hideText.classList.remove('active');
+                btnShowHideTextPapers.innerHTML = 'Показать ещё';
+            } else {
+                hideText.classList.add('active');
+                btnShowHideTextPapers.innerHTML = 'Скрыть';
+
+            }
+        })
     }
 })

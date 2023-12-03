@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-feeds" id="form-for-feed">
+        <form action="#">
+            <label>
+                <span>Имя</span>
+                <input class="form-nameuser" type="text" >
+            </label>
+            <label>
+                <span>email</span>
+                <input type="email" class="form-emailuser">
+            </label>
+            <div class="action">
+                <button type="submit" class="form-submit">Скачать презентацию + чек-лист + 10 ссылок</button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        let formForFeed = document.querySelector('#form-for-feed');
+        let actionBtn = document.querySelector('.form-submit');
+        actionBtn.addEventListener('click', ()=>{
+            let username = document.querySelector('.form-nameuser').value;
+            let emailname = document.querySelector('.form-emailuser').value;
+            const link = `https://cp.unisender.com/ru/captcha-subscribe?userId=2080918&formId=281981&email=${username}&isV5=1&defaultListId=18558049&fields%5B5311534%5D=${emailname}`;
+            window.open(link, "mozillaWindow", "popup");
+        });
+    </script>
+</body>
+</html>

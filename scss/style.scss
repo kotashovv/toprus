@@ -87,3 +87,96 @@ Version: 1.0
 }
 
 @import 'components/zaims';
+
+
+.form-feeds {
+    background: url(images/afterpost.jpg)no-repeat;
+    box-shadow: 0 0 10px #00000021;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    form {
+        display: flex;        
+        flex-direction: column;
+        label {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            span {
+                font-size: 14px;
+                display: block;
+                margin-bottom: 5px;
+            }
+            input {
+                font-size: 16px;
+                font-weight: 500;
+                color: #000;
+                padding: 10px 5px;
+                border: 1px solid #0000005e;
+                border-radius: 5px;
+            }
+        }
+        .action {
+            button {
+                display: block;
+                box-sizing: border-box;
+                max-width: none;
+                width: 100%;
+                text-align: center;
+                padding: 5px 15px;
+                background: url(images/single_submit.png)no-repeat;
+                border: none;
+                box-shadow: 0 0 10px #00000021;
+                transition: .35s ease;
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
+        }
+    }
+}
+/* Обновление отсюда */
+.type-product {
+    select {
+        padding: 20px;
+        box-sizing: border-box;
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        border-radius: 8px 8px 0px 0px;
+        width: max-content;
+        border: 1px solid #A4A4A4;
+    }
+}
+
+@media(max-width:620px) {
+    .form-body {
+        border: none;
+    }
+}
+.form-from-main {
+    label {
+        width: calc(25%);
+        select {
+            width: 100%;
+        }
+    }
+    @media(max-width:920px) {
+        label {
+            width: calc(50% - 30px) !important;
+        }
+    }
+    @media(max-width:620px) {
+        display: flex !important;
+        flex-direction: column;
+        label {
+            width: 100% !important;
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@import "components/newspaper";
+@import "components/instruction";
+@import "components/tablelist";

@@ -1,0 +1,150 @@
+.tablelist {
+    box-sizing: border-box;
+    padding: 40px 0;
+    position: relative;
+    &__wrap {
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid #F5F5F5;
+        background: #FFF;
+        box-shadow: 2px 4px 16px 0px rgba(0, 0, 0, 0.07);
+
+    }
+    &__top {
+        background: linear-gradient(180deg, #0C225D 0%, #395EBB 100%);
+        color: #fff;
+        box-sizing: border-box;
+        padding: 30px 20px 10px;
+    }
+    // .tablelist__title
+
+    &__title {
+        margin-bottom: 15px;
+        h2 {
+            margin: 0;
+            display: block;
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 1.3;
+            font-family: $rob;
+        }
+    }
+
+    // .tablelist__search
+
+    &__search {
+        display: block;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background-image: url(assets/imgs/loop.svg);
+            
+        }
+        input {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 20px 12px 54px;
+            font-size: 16px;
+            font-size: #000;
+            line-height: 1.2;
+            border-radius: 20px;
+            border: none;
+           
+        }
+    }
+
+    // .tablelist__table
+
+    &__table {
+    }
+
+    // .tablelist__head
+
+    &__head {
+        display: flex;
+        align-items: stretch;
+        margin-top: 30px;
+        margin: 30px -20px 0;
+        .col {
+            width: 25%;
+            box-sizing: border-box;
+            position: relative;
+            border-right: 1px solid #fff;
+            &:last-child {
+                border-right: none;
+            }
+            
+            button,span {
+                width: 100%;
+                text-align: left;
+                border: none;
+                background-color: transparent;
+                color: #fff;
+                cursor: pointer;
+                padding: 5px 20px;
+                box-sizing: border-box;
+                font-size: 24px;
+                font-weight: 500;
+                display: block;
+            }
+            span {
+                cursor: auto;
+            }
+        }
+    }
+
+    // .tablelist__content
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        .item {
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            .col {
+                width: 25%;
+                box-sizing: border-box;
+                padding: 20px 30px;
+                border-right: 1px solid rgba(51, 86, 175, 0.30);
+                border-bottom: 1px solid rgba(51, 86, 175, 0.30);
+            }
+        }
+    }
+
+    // .tablelist__pagination
+
+    &__pagination {
+    }
+
+    // .tablelist__prev
+
+    &__prev {
+    }
+
+    // .tablelist__nums
+
+    &__nums {
+    }
+}
+.col {
+}
+.sort-btn {
+}
+.item {
+}
+.name {
+}
+.sum {
+}
+.date {
+}
+.percent {
+}

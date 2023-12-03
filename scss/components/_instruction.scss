@@ -1,0 +1,202 @@
+.instruction {
+    box-sizing: border-box;
+    position: relative;
+    padding: 40px;
+    // .instruction__title
+    border-radius: 10px;
+    background: linear-gradient(147deg, #0D2360 0%, #385DBA 78.25%);
+    margin: 20px 0 40px;
+    &__title {
+        margin-bottom: 30px;
+        h2 {
+            margin: 0;
+            color: #fff;
+            font-family: $rob;
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+    }
+
+    // .instruction__wrap
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: 12, 1fr;
+        grid-template-rows:3, 1fr;
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+    }
+
+    // .instruction__item
+
+    &__item {
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+        background-color: #fff;
+        border-radius: 20px;
+        h3 {
+            font-family: $rob;
+            color: #507be9;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.5;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+        p {
+            margin: 0;
+            color: #252525;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            padding-top: 10px;
+            margin-bottom: 10px;
+        }
+        ul, ol {
+            margin: 0;
+            padding: 0;
+            padding-left: 20px;
+            line-height: 1.4;
+            padding-top: 10px;
+            li {
+                margin: 0;
+                padding: 0;
+                color: #252525;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.5;
+            }
+        }
+        &:nth-child(1) {
+            grid-area: 1 / 1 / 2 / 7;
+            &::before {
+                content: '';
+                position: absolute;
+                top: -20px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                right: -45px;
+                width: 45px;
+                height: 20px;
+                background-image: url(assets/imgs/ins1.svg);
+            }
+        }
+        &:nth-child(2) {
+            grid-area: 1 / 7 / 2 / 13;
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -20px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                left: -35px;
+                width: 45px;
+                height: 40px;
+                background-image: url(/assets/imgs/isn3.svg);
+            }
+        }
+        &:nth-child(3) {
+            grid-area: 2 / 1 / 3 / 13;
+        }
+        &:nth-child(4) {
+            grid-area: 3 / 1 / 4 / 13;
+        }
+        b {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-family: $rob;
+        }
+        .list {
+            display: flex;
+            align-items: center;
+            
+            .item {
+                display: flex;
+                align-items: center;                
+                margin-right: 45px;
+                font-size: 16px;
+                line-height: 1.3;
+                &:last-child {
+                    margin-right: 0;
+                }
+                svg {
+                    display: block;
+                    margin-right: 10px;
+                    width: 35px;
+                    height: 35px;
+                }
+
+            }
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .instruction {
+        padding: 40px 20px;
+        &__wrap {
+            display: flex;
+            flex-direction: column;
+            row-gap: 0;
+            column-gap: 0;
+        }
+        &__item {
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &::before {
+                display: none !important;
+            }
+        }
+    }
+}
+
+@media(max-width:620px) {
+    .instruction {
+        margin: 20px -15px 20px;
+        &__title {
+            h2 {
+                font-size: 28px;
+            }
+        }
+        &__item {
+            h3 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 14px;
+            }
+            ul, ol {
+                li {
+                    font-size: 14px;
+                }
+            }
+            b {
+                font-size: 14px;
+            }
+            .list {
+                flex-wrap: wrap;
+                .item {
+                    font-size: 14px;
+                    margin-bottom: 15px;
+                    margin-right: 15px;
+                    @media(max-width:420px) {
+                        width: calc(50% - 15px);
+                    }
+                    svg {
+                        font-size: 30px;
+                        height: 30px;
+                        display: block;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
